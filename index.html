@@ -280,6 +280,15 @@
             gap: 12px;
         }
 
+        @keyframes logoEntryBlink {
+            0% { opacity: 0; transform: scale(0.5); }
+            20% { opacity: 1; transform: scale(1.1); }
+            40% { opacity: 0; transform: scale(1.1); }
+            60% { opacity: 1; transform: scale(1.1); }
+            80% { opacity: 0; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
         .logo-img {
             width: 50px;
             height: 50px;
@@ -287,6 +296,7 @@
             object-fit: cover;
             border: 2px solid hsl(var(--accent-yellow));
             box-shadow: var(--shadow-sm);
+            animation: logoEntryBlink 2.5s ease-out forwards;
         }
 
         .logo-text {
@@ -1670,7 +1680,7 @@
     <header id="site-header">
         <div class="header-container">
             <a href="#home" class="logo-wrap">
-                <img src="images2/IMG_4132.JPG" alt="Astra Kidz Logo" class="logo-img">
+                <img src="logo1.jpeg" alt="Astra Kidz Logo" class="logo-img">
                 <span class="logo-text">Astra<span>Kidz</span></span>
             </a>
             
