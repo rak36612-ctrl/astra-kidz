@@ -371,7 +371,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, hsla(var(--primary-light), 0.7), hsla(var(--bg-creamy), 0.9)), 
-                        url('images/hero_bg.png') no-repeat center center/cover;
+                        url('images2/IMG_4134.JPG') no-repeat center center/cover;
             padding-top: 120px;
             padding-bottom: 100px;
         }
@@ -1416,15 +1416,44 @@
         /* ==========================================================================
            10. Floating WhatsApp Widget (Pulsing Animation)
            ========================================================================== */
-        .whatsapp-widget {
+        .floating-actions-wrapper {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 999;
             display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        .whatsapp-widget, .call-widget {
+            display: flex;
             align-items: center;
             gap: 10px;
             cursor: pointer;
+            text-decoration: none;
+        }
+        .call-widget:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .call-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: hsl(var(--primary));
+            color: hsl(var(--white));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(117, 107, 241, 0.4);
+            position: relative;
+            transition: var(--transition);
+        }
+        .call-widget:hover .call-btn {
+            background-color: hsl(var(--secondary));
+            transform: scale(1.1) rotate(10deg);
         }
 
         .whatsapp-tooltip {
@@ -1641,7 +1670,7 @@
     <header id="site-header">
         <div class="header-container">
             <a href="#home" class="logo-wrap">
-                <img src="images/logo.jpeg" alt="Astra Kidz Logo" class="logo-img">
+                <img src="images2/IMG_4132.JPG" alt="Astra Kidz Logo" class="logo-img">
                 <span class="logo-text">Astra<span>Kidz</span></span>
             </a>
             
@@ -1682,7 +1711,7 @@
                     </div>
                     <div class="hero-card-container reveal active">
                         <div class="hero-blob-wrap">
-                            <img src="images/hero_bg.png" alt="Astra Kidz Preschoolers Learning" class="hero-decor-img">
+                            <img src="images2/IMG_4134.JPG" alt="Astra Kidz Preschoolers Learning" class="hero-decor-img">
                             <div class="floating-badge badge-1">
                                 <div class="badge-icon badge-icon-yellow"><i class="fa-solid fa-star"></i></div>
                                 <div class="badge-info">
@@ -1715,7 +1744,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image-wrap reveal">
-                        <img src="images/about_img.png" alt="Children Smiling" class="about-img">
+                        <img src="images2/IMG_4136.JPG" alt="Children Smiling" class="about-img">
                         <div class="about-experience-stamp">
                             <h3>100%</h3>
                             <p>Safe &amp; Secure</p>
@@ -1775,7 +1804,7 @@
                     <!-- Toddlers Card -->
                     <div class="program-card prog-purple reveal">
                         <div class="program-img-wrap">
-                            <img src="images/program_toddlers.png" alt="Toddler Program" class="program-img">
+                            <img src="images2/IMG_4137.JPG" alt="Toddler Program" class="program-img">
                             <span class="program-age age-purple">1 - 3 Years</span>
                         </div>
                         <div class="program-body">
@@ -1791,7 +1820,7 @@
                     <!-- Preschool Card -->
                     <div class="program-card prog-pink reveal">
                         <div class="program-img-wrap">
-                            <img src="images/program_preschool.png" alt="Preschool Program" class="program-img">
+                            <img src="images2/IMG_4138.JPG" alt="Preschool Program" class="program-img">
                             <span class="program-age age-pink">3 - 4 Years</span>
                         </div>
                         <div class="program-body">
@@ -1807,7 +1836,7 @@
                     <!-- Kindergarten Card -->
                     <div class="program-card prog-yellow reveal">
                         <div class="program-img-wrap">
-                            <img src="images/program_kindergarten.png" alt="Kindergarten Program" class="program-img">
+                            <img src="images2/IMG_4139.JPG" alt="Kindergarten Program" class="program-img">
                             <span class="program-age age-yellow">4 - 6 Years</span>
                         </div>
                         <div class="program-body">
@@ -1842,37 +1871,79 @@
                 
                 <div class="gallery-grid">
                     <div class="gallery-item reveal" data-index="0">
-                        <img src="images/gallery_outdoor.png" alt="Preschoolers playing outdoors on the playground" class="gallery-item-img">
+                        <img src="images2/IMG_4140.JPG" alt="Gallery Image 1" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
                     </div>
                     <div class="gallery-item reveal" data-index="1">
-                        <img src="images/gallery_music.png" alt="Children enjoying a fun music class" class="gallery-item-img">
+                        <img src="images2/IMG_4141.JPG" alt="Gallery Image 2" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
                     </div>
                     <div class="gallery-item reveal" data-index="2">
-                        <img src="images/gallery_science.png" alt="Kids learning science with simple experiments" class="gallery-item-img">
+                        <img src="images2/IMG_4142.JPG" alt="Gallery Image 3" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
                     </div>
                     <div class="gallery-item reveal" data-index="3">
-                        <img src="images/gallery_reading.png" alt="Teacher reading a colorful storybook to preschool kids" class="gallery-item-img">
+                        <img src="images2/IMG_4143.JPG" alt="Gallery Image 4" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
                     </div>
                     <div class="gallery-item reveal" data-index="4">
-                        <img src="images/gallery_blocks.png" alt="Children building a castle using colorful blocks" class="gallery-item-img">
+                        <img src="images2/IMG_4144.JPG" alt="Gallery Image 5" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
                     </div>
                     <div class="gallery-item reveal" data-index="5">
-                        <img src="images/program_preschool.png" alt="Kids engaging in creative arts and painting class" class="gallery-item-img">
+                        <img src="images2/IMG_4145.JPG" alt="Gallery Image 6" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="6">
+                        <img src="images2/IMG_4146.JPG" alt="Gallery Image 7" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="7">
+                        <img src="images2/IMG_4147.JPG" alt="Gallery Image 8" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="8">
+                        <img src="images2/IMG_4148.JPG" alt="Gallery Image 9" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="9">
+                        <img src="images2/IMG_4149.JPG" alt="Gallery Image 10" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="10">
+                        <img src="images2/IMG_4150.JPG" alt="Gallery Image 11" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="11">
+                        <img src="images2/IMG_4151.JPG" alt="Gallery Image 12" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="12">
+                        <img src="images2/IMG_4152.JPG" alt="Gallery Image 13" class="gallery-item-img">
                         <div class="gallery-overlay">
                             <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                         </div>
@@ -1976,7 +2047,7 @@
                                 <div class="contact-info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
                                 <div class="contact-info-details">
                                     <h4>School Address</h4>
-                                    <p>12, Sunshine Boulevard, Rainbow Enclave, <br>Block 4, City Centre, 600001</p>
+                                    <p>MAIN ROAD, Anjanadri Enclave House no 51, C cross, Kaveri nagar, vadarpalya,<br>Hennur Gardens, Bengaluru, Karnataka 560113</p>
                                 </div>
                             </div>
                             
@@ -1985,7 +2056,7 @@
                                 <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
                                 <div class="contact-info-details">
                                     <h4>Call Us directly</h4>
-                                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                                    <p><a href="tel:+919483106186">+91 94831 06186</a></p>
                                 </div>
                             </div>
                             
@@ -2009,11 +2080,11 @@
                         </div>
                         
                         <!-- Map Placement Graphic -->
-                        <div class="map-placeholder">
+                        <a class="map-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-decoration:none;" href="https://maps.app.goo.gl/bD4mdgdzmrsqujrM9?g_st=iw" target="_blank">
                             <i class="fa-solid fa-location-pin map-pin-anim"></i>
                             <h4>Astra Kidz Preschool Campus</h4>
                             <p>Click details to launch navigation map</p>
-                        </div>
+                        </a>
                     </div>
                     
                     <div class="contact-form-wrap reveal">
@@ -2099,11 +2170,11 @@
                     <div class="footer-contact-info">
                         <div class="footer-contact-item">
                             <i class="fa-solid fa-location-dot"></i>
-                            <p>12, Sunshine Boulevard, Rainbow Enclave, Block 4, City Centre</p>
+                            <p>MAIN ROAD, Anjanadri Enclave House no 51, C cross, Kaveri nagar, vadarpalya, Hennur Gardens, Bengaluru, Karnataka 560113</p>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fa-solid fa-phone"></i>
-                            <p>+91 98765 43210</p>
+                            <p>+91 94831 06186</p>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fa-solid fa-envelope"></i>
@@ -2123,10 +2194,18 @@
     <!-- ==========================================================================
        9. Floating WhatsApp Widget Integration
        ========================================================================== -->
-    <div class="whatsapp-widget" id="whatsapp-trigger">
-        <div class="whatsapp-tooltip">Chat with Admissions!</div>
-        <div class="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i>
+    <div class="floating-actions-wrapper">
+        <a href="tel:+919483106186" class="call-widget">
+            <div class="whatsapp-tooltip">Call Us Directly!</div>
+            <div class="call-btn">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+        </a>
+        <div class="whatsapp-widget" id="whatsapp-trigger">
+            <div class="whatsapp-tooltip">Chat with Admissions!</div>
+            <div class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
         </div>
     </div>
 
@@ -2370,16 +2449,20 @@
                 const phone = document.getElementById('parent-phone').value;
                 const message = document.getElementById('parent-msg').value;
 
-                // Simulate AJAX API post call
+                // Send via SMS
+                const targetPhone = "+919483106186";
+                const smsBody = `Hi Astra Kidz, I am ${name}. Email: ${email}, Phone: ${phone}. Inquiry: ${message}`;
+                const encodedBody = encodeURIComponent(smsBody);
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                const smsUrl = isIOS ? `sms:${targetPhone}&body=${encodedBody}` : `sms:${targetPhone}?body=${encodedBody}`;
+                
+                window.open(smsUrl, '_self');
+
+                successBox.style.display = 'flex';
+                contactForm.reset();
                 setTimeout(() => {
-                    successBox.style.display = 'flex';
-                    contactForm.reset();
-                    
-                    // Auto-hide success message after 5 seconds
-                    setTimeout(() => {
-                        successBox.style.display = 'none';
-                    }, 5000);
-                }, 400);
+                    successBox.style.display = 'none';
+                }, 5000);
             });
 
             /* ==========================================
@@ -2388,7 +2471,7 @@
             const whatsappTrigger = document.getElementById('whatsapp-trigger');
             
             whatsappTrigger.addEventListener('click', () => {
-                const phoneNumber = "919876543210"; // Astra Kidz phone number (with country code, without +)
+                const phoneNumber = "919483106186"; // Astra Kidz phone number (with country code, without +)
                 const textMessage = "Hi Astra Kidz! I would like to inquire about admission bookings and preschool programs for my child.";
                 const encodedMessage = encodeURIComponent(textMessage);
                 
