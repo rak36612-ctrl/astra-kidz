@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Kidz Preschool | Play, Learn, and Grow Together</title>
+    <meta name="description" content="Welcome to Astra Kidz Preschool, where early learning meets fun and imagination! We offer premium safe classrooms, expert care, and play-based learning for toddlers, preschoolers, and kindergarteners.">
+    
+    <!-- Google Fonts: Fredoka for headings (rounded, playful), Quicksand for body text (friendly, highly readable) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           1. CSS Reset & Variables (Design System)
+           ========================================================================== */
+        :root {
+            /* Vibrant, child-friendly yet modern HSL pastel palette */
+            --primary: 262, 70%, 63%;       /* Playful Purple (#8c7ae6) */
+            --primary-light: 262, 70%, 95%;
+            --secondary: 355, 100%, 73%;     /* Coral Red/Pink (#ff7675) */
+            --secondary-light: 355, 100%, 96%;
+            --accent-yellow: 40, 100%, 65%;   /* Sunshine Yellow (#f1c40f) */
+            --accent-green: 150, 60%, 45%;    /* Friendly Mint Green (#2ecc71) */
+            --accent-green-dark: 150, 60%, 35%;
+            --accent-blue: 200, 90%, 55%;     /* Sky Blue (#3498db) */
+            
+            /* Neutrals */
+            --text-dark: 210, 29%, 18%;       /* Slate Dark (#1e272e) */
+            --text-light: 210, 15%, 45%;      /* Muted Gray (#57606f) */
+            --bg-creamy: 40, 60%, 98%;        /* Warm off-white (#fefaf4) */
+            --white: 0, 0%, 100%;
+            
+            /* Typography */
+            --font-headings: 'Fredoka', sans-serif;
+            --font-body: 'Quicksand', sans-serif;
+            
+            /* Shadows & Transitions */
+            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 15px 35px rgba(108, 92, 231, 0.12);
+            --shadow-hover: 0 20px 40px rgba(108, 92, 231, 0.2);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --radius-round: 24px;
+            --radius-pill: 100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: hsl(var(--bg-creamy));
+            color: hsl(var(--text-dark));
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-headings);
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        /* Common Layout Sections */
+        section {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tag-purple {
+            background-color: hsl(var(--primary-light));
+            color: hsl(var(--primary));
+        }
+
+        .tag-pink {
+            background-color: hsl(var(--secondary-light));
+            color: hsl(var(--secondary));
+        }
+
+        .tag-blue {
+            background-color: hsla(var(--accent-blue), 0.1);
+            color: hsl(var(--accent-blue));
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: hsl(var(--text-dark));
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: hsl(var(--text-light));
+            font-weight: 500;
+        }
+
+        /* Buttons & CTAs */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-family: var(--font-headings);
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-blue)));
+            color: hsl(var(--white));
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent-yellow)));
+            color: hsl(var(--white));
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: hsl(var(--primary));
+            border: 2px solid hsl(var(--primary));
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: hsl(var(--primary-light));
+            color: hsl(var(--primary));
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Custom Wave Dividers */
+        .wave-divider {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 1;
+        }
+
+        .wave-top {
+            top: -1px;
+            transform: rotate(180deg);
+        }
+
+        .wave-bottom {
+            bottom: -1px;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100%;
+        }
+
+        .wave-divider .wave-fill-cream {
+            fill: hsl(var(--bg-creamy));
+        }
+
+        .wave-divider .wave-fill-white {
+            fill: hsl(var(--white));
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           2. Header & Navigation (Glassmorphic)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-sm);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid hsl(var(--accent-yellow));
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-text {
+            font-family: var(--font-headings);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text span {
+            color: hsl(var(--secondary));
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-family: var(--font-headings);
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: hsl(var(--text-dark));
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: hsl(var(--secondary));
+            border-radius: 2px;
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            color: hsl(var(--secondary));
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link.active-link {
+            color: hsl(var(--primary));
+        }
+
+        .nav-link.active-link::after {
+            width: 80%;
+            background-color: hsl(var(--primary));
+        }
+
+        /* Burger Menu */
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: hsl(var(--text-dark));
+            margin: 5px;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           3. Hero Section
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, hsla(var(--primary-light), 0.7), hsla(var(--bg-creamy), 0.9)), 
+                        url('images/hero_bg.png') no-repeat center center/cover;
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            padding-right: 20px;
+        }
+
+        .hero-tagline {
+            display: inline-block;
+            background-color: hsl(var(--accent-yellow));
+            color: hsl(var(--text-dark));
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 6px 20px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transform: rotate(-1.5deg);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: hsl(var(--text-dark));
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .hero-title span {
+            color: hsl(var(--primary));
+            position: relative;
+        }
+
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: hsla(var(--accent-yellow), 0.35);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: hsl(var(--text-light));
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-blob-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        /* Decorative playful floating shapes */
+        .hero-decor-img {
+            width: 100%;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            border: 10px solid hsl(var(--white));
+            box-shadow: var(--shadow-lg);
+            animation: blobby 12s infinite alternate ease-in-out;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+
+        @keyframes blobby {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            50% { border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%; }
+            100% { border-radius: 50% 50% 60% 40% / 40% 40% 60% 50%; }
+        }
+
+        .floating-badge {
+            position: absolute;
+            background-color: hsl(var(--white));
+            border-radius: var(--radius-round);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-lg);
+            animation: floaty 4s infinite ease-in-out;
+            z-index: 5;
+        }
+
+        .badge-1 {
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            bottom: 10%;
+            right: -5%;
+            animation-delay: 2s;
+        }
+
+        .badge-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: hsl(var(--white));
+        }
+
+        .badge-icon-yellow { background-color: hsl(var(--accent-yellow)); }
+        .badge-icon-purple { background-color: hsl(var(--primary)); }
+
+        .badge-info h4 {
+            font-size: 1rem;
+            color: hsl(var(--text-dark));
+        }
+
+        .badge-info p {
+            font-size: 0.8rem;
+            color: hsl(var(--text-light));
+            font-weight: 600;
+        }
+
+        @keyframes floaty {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* ==========================================================================
+           4. About Us Section
+           ========================================================================== */
+        .about {
+            background-color: hsl(var(--white));
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-img {
+            border-radius: var(--radius-round);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            object-fit: cover;
+            border: 8px solid hsl(var(--primary-light));
+        }
+
+        .about-experience-stamp {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: hsl(var(--secondary));
+            color: hsl(var(--white));
+            padding: 20px 25px;
+            border-radius: var(--radius-round);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transform: rotate(-3deg);
+        }
+
+        .about-experience-stamp h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2px;
+        }
+
+        .about-experience-stamp p {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-info h3 {
+            font-size: 1.8rem;
+            color: hsl(var(--text-dark));
+            margin-bottom: 20px;
+        }
+
+        .about-info p {
+            color: hsl(var(--text-light));
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background-color: hsl(var(--bg-creamy));
+            padding: 20px;
+            border-radius: var(--radius-round);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background-color: hsl(var(--white));
+        }
+
+        .pillar-purple:hover { border-color: hsl(var(--primary)); }
+        .pillar-blue:hover { border-color: hsl(var(--accent-blue)); }
+        .pillar-green:hover { border-color: hsl(var(--accent-green)); }
+        .pillar-yellow:hover { border-color: hsl(var(--accent-yellow)); }
+
+        .pillar-icon-box {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(var(--white));
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .icon-purple { background-color: hsl(var(--primary)); }
+        .icon-blue { background-color: hsl(var(--accent-blue)); }
+        .icon-green { background-color: hsl(var(--accent-green)); }
+        .icon-yellow { background-color: hsl(var(--accent-yellow)); }
+
+        .pillar-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+            color: hsl(var(--text-dark));
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            color: hsl(var(--text-light));
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           5. Programs Section
+           ========================================================================== */
+        .programs {
+            background-color: hsl(var(--bg-creamy));
+            overflow: hidden;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: hsl(var(--white));
+            border-radius: var(--radius-round);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 3px solid transparent;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .prog-purple:hover { border-color: hsla(var(--primary), 0.7); }
+        .prog-pink:hover { border-color: hsla(var(--secondary), 0.7); }
+        .prog-yellow:hover { border-color: hsla(var(--accent-yellow), 0.7); }
+
+        .program-img-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1.33;
+        }
+
+        .program-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .program-card:hover .program-img {
+            transform: scale(1.08);
+        }
+
+        .program-age {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: hsl(var(--white));
+            font-family: var(--font-headings);
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-sm);
+            font-size: 0.85rem;
+        }
+
+        .age-purple { background-color: hsl(var(--primary)); }
+        .age-pink { background-color: hsl(var(--secondary)); }
+        .age-yellow { background-color: hsl(var(--accent-yellow)); color: hsl(var(--text-dark)); }
+
+        .program-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: hsl(var(--text-dark));
+        }
+
+        .program-desc {
+            color: hsl(var(--text-light));
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 2px dashed #f1f2f6;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: hsl(var(--text-light));
+            font-weight: 600;
+        }
+
+        .meta-item i {
+            color: hsl(var(--primary));
+        }
+
+        .prog-pink .meta-item i { color: hsl(var(--secondary)); }
+        .prog-yellow .meta-item i { color: hsl(var(--accent-yellow)); }
+
+        /* ==========================================================================
+           6. School Life Gallery Section
+           ========================================================================== */
+        .gallery {
+            background-color: hsl(var(--white));
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-round);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            aspect-ratio: 1.25;
+            cursor: pointer;
+            border: 5px solid hsl(var(--white));
+            outline: 2px solid #f1f2f6;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            outline-color: hsl(var(--primary));
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: hsla(var(--primary), 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: hsl(var(--white));
+            color: hsl(var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transform: scale(0.6);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item:hover .gallery-icon-box {
+            transform: scale(1);
+        }
+
+        /* Lightbox CSS Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 39, 46, 0.95);
+            z-index: 2000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content-wrap {
+            max-width: 900px;
+            max-height: 80vh;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-modal.active .lightbox-content-wrap {
+            transform: scale(1);
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 12px;
+            border: 5px solid hsl(var(--white));
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0px;
+            font-size: 2.2rem;
+            color: hsl(var(--white));
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+
+        .lightbox-close:hover {
+            color: hsl(var(--secondary));
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: hsl(var(--white));
+            cursor: pointer;
+            transition: var(--transition);
+            background: rgba(0, 0, 0, 0.3);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--white));
+        }
+
+        .lightbox-prev {
+            left: -80px;
+        }
+
+        .lightbox-next {
+            right: -80px;
+        }
+
+        /* ==========================================================================
+           7. Testimonials Section
+           ========================================================================== */
+        .testimonials {
+            background-color: hsl(var(--bg-creamy));
+            overflow: hidden;
+        }
+
+        .slider-viewport {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide-card {
+            min-width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .slide-inner {
+            background-color: hsl(var(--white));
+            border-radius: var(--radius-round);
+            padding: 40px 50px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .slide-inner:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: hsl(var(--primary-light));
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            font-size: 4rem;
+            color: hsla(var(--primary), 0.08);
+            line-height: 1;
+        }
+
+        .slide-text {
+            font-size: 1.15rem;
+            color: hsl(var(--text-dark));
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .parent-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .parent-avatar-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: hsl(var(--primary-light));
+            color: hsl(var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 2px solid hsl(var(--primary-light));
+        }
+
+        .parent-avatar-box.avatar-pink {
+            background-color: hsl(var(--secondary-light));
+            color: hsl(var(--secondary));
+            border-color: hsl(var(--secondary-light));
+        }
+
+        .parent-avatar-box.avatar-yellow {
+            background-color: hsla(var(--accent-yellow), 0.1);
+            color: hsl(var(--accent-yellow));
+            border-color: hsla(var(--accent-yellow), 0.1);
+        }
+
+        .parent-details h4 {
+            font-size: 1.1rem;
+            color: hsl(var(--text-dark));
+            margin-bottom: 2px;
+        }
+
+        .parent-details p {
+            font-size: 0.85rem;
+            color: hsl(var(--text-light));
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #d2dae2;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: hsl(var(--primary));
+            width: 32px;
+            border-radius: 10px;
+        }
+
+        /* ==========================================================================
+           8. Contact Us Section
+           ========================================================================== */
+        .contact {
+            background-color: hsl(var(--white));
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+        }
+
+        .contact-card-box {
+            background-color: hsl(var(--bg-creamy));
+            border-radius: var(--radius-round);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-card-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: hsl(var(--text-dark));
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: hsl(var(--white));
+            color: hsl(var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .contact-info-item:hover .contact-info-icon {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--white));
+            transform: scale(1.08);
+        }
+
+        .contact-info-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: hsl(var(--text-dark));
+        }
+
+        .contact-info-details p, .contact-info-details a {
+            font-size: 0.95rem;
+            color: hsl(var(--text-light));
+            font-weight: 500;
+        }
+
+        .contact-info-details a:hover {
+            color: hsl(var(--primary));
+        }
+
+        /* Map Placeholder Graphic */
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, hsla(var(--primary-light), 0.5), hsla(var(--secondary-light), 0.5)),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%236c5ce7" stroke-width="0.5" stroke-dasharray="2,2"/><circle cx="50" cy="50" r="10" fill="%23ff7675" opacity="0.15"/></svg>');
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+            border: 3px solid hsl(var(--white));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-pin-anim {
+            font-size: 2.2rem;
+            color: hsl(var(--secondary));
+            animation: bouncePin 2s infinite ease-in-out;
+        }
+
+        @keyframes bouncePin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .map-placeholder h4 {
+            color: hsl(var(--text-dark));
+            font-size: 1rem;
+        }
+
+        .map-placeholder p {
+            color: hsl(var(--text-light));
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Contact Form */
+        .contact-form-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-form-wrap h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: hsl(var(--text-dark));
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: var(--radius-round);
+            border: 2px solid #e1e8ed;
+            background-color: hsl(var(--white));
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: hsl(var(--text-dark));
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 4px hsla(var(--primary), 0.15);
+        }
+
+        textarea.form-input {
+            resize: none;
+            min-height: 120px;
+        }
+
+        /* Form Labels */
+        .form-label {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: hsl(var(--text-light));
+            pointer-events: none;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.95rem;
+            background-color: hsl(var(--white));
+            padding: 0 4px;
+        }
+
+        textarea ~ .form-label {
+            top: 25px;
+        }
+
+        /* Float the label when input is focused or not empty */
+        .form-input:focus ~ .form-label,
+        .form-input:not(:placeholder-shown) ~ .form-label {
+            top: 0px;
+            font-size: 0.8rem;
+            color: hsl(var(--primary));
+            transform: translateY(-50%);
+        }
+
+        /* Notification Success Box */
+        .success-box {
+            display: none;
+            background-color: hsl(var(--accent-green-dark));
+            color: hsl(var(--white));
+            padding: 15px 25px;
+            border-radius: var(--radius-round);
+            margin-top: 20px;
+            align-items: center;
+            gap: 12px;
+            animation: slideInDown 0.4s ease;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ==========================================================================
+           9. Footer
+           ========================================================================== */
+        footer {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--white));
+            padding: 100px 20px 30px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .footer-wave svg {
+            width: calc(100% + 1.3px);
+            height: 100%;
+        }
+
+        .footer-wave fill {
+            fill: hsl(var(--white));
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo-wrap {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-headings);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: hsl(var(--white));
+        }
+
+        .footer-logo-text span {
+            color: hsl(var(--accent-yellow));
+        }
+
+        .footer-desc {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 25px;
+            max-width: 300px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: hsl(var(--accent-yellow));
+            color: hsl(var(--text-dark));
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: hsl(var(--accent-yellow));
+            position: relative;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-link::before {
+            content: '❤';
+            font-size: 0.7rem;
+            color: hsl(var(--secondary));
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: hsl(var(--accent-yellow));
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            opacity: 0.85;
+        }
+
+        .footer-contact-item i {
+            color: hsl(var(--accent-yellow));
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .love-span {
+            color: hsl(var(--secondary));
+            font-size: 1rem;
+        }
+
+        /* ==========================================================================
+           10. Floating WhatsApp Widget (Pulsing Animation)
+           ========================================================================== */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .whatsapp-tooltip {
+            background-color: hsl(var(--white));
+            color: hsl(var(--text-dark));
+            padding: 10px 18px;
+            border-radius: var(--radius-round);
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid hsl(var(--accent-green));
+            opacity: 0;
+            transform: translateX(20px);
+            transition: var(--transition);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .whatsapp-widget:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: hsl(var(--accent-green));
+            color: hsl(var(--white));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        /* Pulsing Background Rings */
+        .whatsapp-btn::before, .whatsapp-btn::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background-color: hsl(var(--accent-green));
+            opacity: 0.4;
+            z-index: -1;
+            animation: pulse-ring 2.5s infinite;
+        }
+
+        .whatsapp-btn::after {
+            animation-delay: 1.25s;
+        }
+
+        .whatsapp-widget:hover .whatsapp-btn {
+            background-color: hsl(var(--accent-green-dark));
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        /* ==========================================================================
+           11. Responsive Styles (Media Queries)
+           ========================================================================== */
+        @media screen and (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            section {
+                padding: 60px 15px;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: 100px;
+                padding-bottom: 80px;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .hero-blob-wrap {
+                margin: 0 auto;
+                max-width: 380px;
+            }
+            .badge-1 {
+                left: -5%;
+            }
+            .badge-2 {
+                right: -5%;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image-wrap {
+                order: 2;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .about-info {
+                order: 1;
+                text-align: center;
+            }
+            .pillars-grid {
+                text-align: left;
+            }
+            .programs-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .footer-desc {
+                margin: 0 auto 20px auto;
+            }
+            .footer-socials {
+                justify-content: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            /* Responsive Menu Logic */
+            body.nav-open {
+                overflow: hidden;
+            }
+            .burger {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background-color: hsl(var(--white));
+                box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+                flex-direction: column;
+                justify-content: center;
+                gap: 35px;
+                transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+                z-index: 1050;
+            }
+            .nav-menu.nav-active {
+                right: 0;
+            }
+            
+            /* Burger Animation */
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            .lightbox-prev {
+                left: 10px;
+            }
+            .lightbox-next {
+                right: 10px;
+            }
+            .lightbox-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. Header & Navigation Menu
+       ========================================================================== -->
+    <header id="site-header">
+        <div class="header-container">
+            <a href="#home" class="logo-wrap">
+                <img src="images/logo.jpeg" alt="Astra Kidz Logo" class="logo-img">
+                <span class="logo-text">Astra<span>Kidz</span></span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#testimonials" class="nav-link">Parents Say</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================================================
+           2. Hero Welcome Section
+           ========================================================================== -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal active">
+                        <span class="hero-tagline">✨ Fun &amp; Learning Combined</span>
+                        <h1 class="hero-title">Where Learning Meets <span>Fun &amp; Play!</span></h1>
+                        <p class="hero-desc">At Astra Kidz, we provide a warm, nurturing environment that fosters creativity, discovery, and social growth. Let your child embark on an exciting educational adventure designed just for their unique minds.</p>
+                        <div class="hero-btns">
+                            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> Enroll Today</a>
+                            <a href="#about" class="btn btn-outline">Explore More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="hero-card-container reveal active">
+                        <div class="hero-blob-wrap">
+                            <img src="images/hero_bg.png" alt="Astra Kidz Preschoolers Learning" class="hero-decor-img">
+                            <div class="floating-badge badge-1">
+                                <div class="badge-icon badge-icon-yellow"><i class="fa-solid fa-star"></i></div>
+                                <div class="badge-info">
+                                    <h4>Top Rated</h4>
+                                    <p>Preschool Care</p>
+                                </div>
+                            </div>
+                            <div class="floating-badge badge-2">
+                                <div class="badge-icon badge-icon-purple"><i class="fa-solid fa-heart"></i></div>
+                                <div class="badge-info">
+                                    <h4>Safe &amp; Loving</h4>
+                                    <p>Play Environment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wave-divider wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="wave-fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           3. About Us Section
+           ========================================================================== -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrap reveal">
+                        <img src="images/about_img.png" alt="Children Smiling" class="about-img">
+                        <div class="about-experience-stamp">
+                            <h3>100%</h3>
+                            <p>Safe &amp; Secure</p>
+                        </div>
+                    </div>
+                    <div class="about-info reveal">
+                        <span class="section-tag tag-purple">Who We Are</span>
+                        <h2 class="section-title">Providing a Bright Start for Every Child</h2>
+                        <p>Astra Kidz is a premier preschool dedicated to fostering a love for learning in young minds. Through a carefully structured, play-based curriculum, our experienced educators guide children as they discover their potential, build friendships, and explore the wonders of the world around them.</p>
+                        <p>We believe that every child is unique and deserves a supportive environment that builds self-confidence, curiosity, and emotional strength.</p>
+                        
+                        <div class="pillars-grid">
+                            <div class="pillar-card pillar-purple">
+                                <div class="pillar-icon-box icon-purple"><i class="fa-solid fa-shield-heart"></i></div>
+                                <h4>Safe Environment</h4>
+                                <p>CCTV monitored, fully secure, and child-proofed indoor &amp; outdoor facilities.</p>
+                            </div>
+                            <div class="pillar-card pillar-blue">
+                                <div class="pillar-icon-box icon-blue"><i class="fa-solid fa-puzzle-piece"></i></div>
+                                <h4>Play-Based Learning</h4>
+                                <p>Activities designed to stimulate critical thinking and motor skills through active play.</p>
+                            </div>
+                            <div class="pillar-card pillar-green">
+                                <div class="pillar-icon-box icon-green"><i class="fa-solid fa-user-tie"></i></div>
+                                <h4>Expert Teachers</h4>
+                                <p>Warm, certified educators trained in child psychology and early education care.</p>
+                            </div>
+                            <div class="pillar-card pillar-yellow">
+                                <div class="pillar-icon-box icon-yellow"><i class="fa-solid fa-palette"></i></div>
+                                <h4>Creative Arts</h4>
+                                <p>Extensive opportunities for music, painting, dancing, and creative self-expression.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           4. Interactive Programs Section
+           ========================================================================== -->
+        <section id="programs" class="programs">
+            <div class="wave-divider wave-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="wave-fill-white"></path>
+                </svg>
+            </div>
+            
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag tag-pink">Our Classes</span>
+                    <h2 class="section-title">Programs Designed for Every Stage</h2>
+                    <p class="section-desc">Our age-appropriate learning programs focus on developing cognitive, emotional, and social capacities of children in their formative years.</p>
+                </div>
+                
+                <div class="programs-grid">
+                    <!-- Toddlers Card -->
+                    <div class="program-card prog-purple reveal">
+                        <div class="program-img-wrap">
+                            <img src="images/program_toddlers.png" alt="Toddler Program" class="program-img">
+                            <span class="program-age age-purple">1 - 3 Years</span>
+                        </div>
+                        <div class="program-body">
+                            <h3 class="program-title">Toddlers Playgroup</h3>
+                            <p class="program-desc">Focuses on sensory play, early language development, fine motor skills, and building basic social habits in a loving environment.</p>
+                            <div class="program-meta">
+                                <span class="meta-item"><i class="fa-solid fa-clock"></i> 3 Hours/Day</span>
+                                <span class="meta-item"><i class="fa-solid fa-users"></i> 1:5 Ratio</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Preschool Card -->
+                    <div class="program-card prog-pink reveal">
+                        <div class="program-img-wrap">
+                            <img src="images/program_preschool.png" alt="Preschool Program" class="program-img">
+                            <span class="program-age age-pink">3 - 4 Years</span>
+                        </div>
+                        <div class="program-body">
+                            <h3 class="program-title">Preschool Explorers</h3>
+                            <p class="program-desc">Encourages creative arts, basic vocabulary, simple math concepts, shapes, storytelling, and early self-independence skills.</p>
+                            <div class="program-meta">
+                                <span class="meta-item"><i class="fa-solid fa-clock"></i> 4 Hours/Day</span>
+                                <span class="meta-item"><i class="fa-solid fa-users"></i> 1:8 Ratio</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kindergarten Card -->
+                    <div class="program-card prog-yellow reveal">
+                        <div class="program-img-wrap">
+                            <img src="images/program_kindergarten.png" alt="Kindergarten Program" class="program-img">
+                            <span class="program-age age-yellow">4 - 6 Years</span>
+                        </div>
+                        <div class="program-body">
+                            <h3 class="program-title">Kindergarten Scholars</h3>
+                            <p class="program-desc">Prepares kids for primary school with phonics reading, elementary science concepts, logical reasoning, and cooperative group play.</p>
+                            <div class="program-meta">
+                                <span class="meta-item"><i class="fa-solid fa-clock"></i> 5 Hours/Day</span>
+                                <span class="meta-item"><i class="fa-solid fa-users"></i> 1:10 Ratio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wave-divider wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="wave-fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           5. School Life Photo Gallery (with Lightbox)
+           ========================================================================== -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag tag-blue">School Life</span>
+                    <h2 class="section-title">Moments of Joy &amp; Discovery</h2>
+                    <p class="section-desc">Get a glimpse of our interactive activities, playtime, science explorations, and creative milestones that fill our children's days.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal" data-index="0">
+                        <img src="images/gallery_outdoor.png" alt="Preschoolers playing outdoors on the playground" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="1">
+                        <img src="images/gallery_music.png" alt="Children enjoying a fun music class" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="2">
+                        <img src="images/gallery_science.png" alt="Kids learning science with simple experiments" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="3">
+                        <img src="images/gallery_reading.png" alt="Teacher reading a colorful storybook to preschool kids" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="4">
+                        <img src="images/gallery_blocks.png" alt="Children building a castle using colorful blocks" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal" data-index="5">
+                        <img src="images/program_preschool.png" alt="Kids engaging in creative arts and painting class" class="gallery-item-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon-box"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           6. Testimonials Section (Automatic & Interactive Slider)
+           ========================================================================== -->
+        <section id="testimonials" class="testimonials">
+            <div class="wave-divider wave-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="wave-fill-white"></path>
+                </svg>
+            </div>
+            
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag tag-purple">Testimonials</span>
+                    <h2 class="section-title">What Happy Parents Say</h2>
+                    <p class="section-desc">Our biggest achievements are the smiles of our children and the trust of their parents. Here's what they say about their experience.</p>
+                </div>
+                
+                <div class="slider-viewport reveal">
+                    <div class="slider-container" id="slider-container">
+                        <!-- Testimonial 1 -->
+                        <div class="slide-card">
+                            <div class="slide-inner">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="slide-text">"Choosing Astra Kidz has been the best decision for our daughter. The teachers are incredibly caring and attentive. She comes home every day excited to tell us about what she painted or learned about. Her vocabulary has improved dramatically in just six months!"</p>
+                                <div class="parent-info">
+                                    <div class="parent-avatar-box">MR</div>
+                                    <div class="parent-details">
+                                        <h4>Meera Ramachandran</h4>
+                                        <p>Mother of Diya (Preschool)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="slide-card">
+                            <div class="slide-inner">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="slide-text">"The safety measures at Astra Kidz give us absolute peace of mind. The classrooms are spacious, bright, and filled with highly creative learning toys. We have seen our son transition from a shy child to an extremely active, social kid who loves team activities."</p>
+                                <div class="parent-info">
+                                    <div class="parent-avatar-box avatar-pink">AS</div>
+                                    <div class="parent-details">
+                                        <h4>Amit Sharma</h4>
+                                        <p>Father of Kabir (Toddlers)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="slide-card">
+                            <div class="slide-inner">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="slide-text">"As working parents, we really appreciate the transparent communication at Astra Kidz. The daily updates are helpful, and the preschool programs focus heavily on preparing kids for grade school. My kid is already writing full words and simple reading!"</p>
+                                <div class="parent-info">
+                                    <div class="parent-avatar-box avatar-yellow">KP</div>
+                                    <div class="parent-details">
+                                        <h4>Karthik Patel</h4>
+                                        <p>Father of Anya (Kindergarten)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Dots navigation -->
+                    <div class="slider-dots" id="slider-dots">
+                        <div class="slider-dot active" data-index="0"></div>
+                        <div class="slider-dot" data-index="1"></div>
+                        <div class="slider-dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wave-divider wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="wave-fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           7. Contact Us Section (Form & Map Placeholder)
+           ========================================================================== -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card-box reveal">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info-list">
+                            <!-- Address -->
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>School Address</h4>
+                                    <p>12, Sunshine Boulevard, Rainbow Enclave, <br>Block 4, City Centre, 600001</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>Call Us directly</h4>
+                                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>Email Address</h4>
+                                    <p><a href="mailto:admissions@astrakidz.com">admissions@astrakidz.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- School Hours -->
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>School Timings</h4>
+                                    <p>Monday – Friday: 8:30 AM – 2:30 PM <br>Saturday: 9:00 AM – 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Map Placement Graphic -->
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-location-pin map-pin-anim"></i>
+                            <h4>Astra Kidz Preschool Campus</h4>
+                            <p>Click details to launch navigation map</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrap reveal">
+                        <span class="section-tag tag-pink">Admissions Open</span>
+                        <h3>Send us a Message</h3>
+                        <p style="color: var(--text-light); margin-bottom: 25px; font-weight: 500;">Fill out the form below, and our admissions advisor will contact you within 24 hours.</p>
+                        
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="parent-name" class="form-input" placeholder=" " required>
+                                <label for="parent-name" class="form-label">Parent's Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="parent-email" class="form-input" placeholder=" " required>
+                                <label for="parent-email" class="form-label">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="parent-phone" class="form-input" placeholder=" " required>
+                                <label for="parent-phone" class="form-label">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="parent-msg" class="form-input" placeholder=" " required></textarea>
+                                <label for="parent-msg" class="form-label">Message / Inquiry Details</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> Submit Inquiry</button>
+                        </form>
+                        
+                        <!-- Success Notification Alert -->
+                        <div class="success-box" id="form-success">
+                            <i class="fa-solid fa-circle-check" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h4 style="font-family: var(--font-headings); font-weight: 600;">Thank You!</h4>
+                                <p style="font-size: 0.85rem; font-weight: 500; opacity: 0.9;">Inquiry received. We'll be in touch soon!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+       8. Footer
+       ========================================================================== -->
+    <footer>
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: #ffffff;"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Branding and social media links -->
+                <div>
+                    <div class="footer-logo-wrap">
+                        <span class="footer-logo-text">Astra<span>Kidz</span></span>
+                    </div>
+                    <p class="footer-desc">Nurturing young minds through play, creativity, and exploration since 2018. Creating secondary homes for your children.</p>
+                    <div class="footer-socials">
+                        <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://twitter.com" class="social-icon" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter-x"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick links navigation column -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#programs" class="footer-link">Programs</a></li>
+                        <li><a href="#gallery" class="footer-link">Gallery</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info details column -->
+                <div class="footer-column">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>12, Sunshine Boulevard, Rainbow Enclave, Block 4, City Centre</p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>+91 98765 43210</p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>admissions@astrakidz.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Astra Kidz Preschool. All Rights Reserved.</p>
+                <p>Designed with <span class="love-span">❤</span> for young learners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       9. Floating WhatsApp Widget Integration
+       ========================================================================== -->
+    <div class="whatsapp-widget" id="whatsapp-trigger">
+        <div class="whatsapp-tooltip">Chat with Admissions!</div>
+        <div class="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       10. Image Gallery Lightbox Element
+       ========================================================================== -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-content-wrap">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+            <img src="" alt="Full Screen Preview" class="lightbox-img" id="lightbox-img">
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       11. Custom JavaScript Code
+       ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* ==========================================
+               A. Mobile Navigation Menu Toggle
+               ========================================== */
+            const burger = document.getElementById('burger-menu');
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body;
+
+            burger.addEventListener('click', () => {
+                navMenu.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+                body.classList.toggle('nav-open');
+            });
+
+            // Close mobile menu when a nav link is clicked
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                    body.classList.remove('nav-open');
+                });
+            });
+
+            /* ==========================================
+               B. Header Scroll Glassmorphism Transition
+               ========================================== */
+            const header = document.getElementById('site-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            /* ==========================================
+               C. Scroll Reveal Animations (IntersectionObserver)
+               ========================================== */
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Trigger animation once
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            /* ==========================================
+               D. Dynamic Active Link Highlight on Scroll
+               ========================================== */
+            const sections = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollPos = window.scrollY + 150; // offset for sticky header
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active-link');
+                    }
+                });
+            });
+
+            /* ==========================================
+               E. Interactive Lightbox Photo Gallery
+               ========================================== */
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+            
+            // Gather all image sources and alt captions
+            const imagesList = [];
+            galleryItems.forEach((item, index) => {
+                const img = item.querySelector('.gallery-item-img');
+                imagesList.push({
+                    src: img.getAttribute('src'),
+                    alt: img.getAttribute('alt')
+                });
+                
+                item.addEventListener('click', () => {
+                    openLightbox(index);
+                });
+            });
+
+            let currentImgIndex = 0;
+
+            function openLightbox(index) {
+                currentImgIndex = index;
+                updateLightboxContent();
+                lightbox.classList.add('active');
+                body.style.overflow = 'hidden'; // block scrolling
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                if (!body.classList.contains('nav-open')) {
+                    body.style.overflow = ''; // restore scrolling
+                }
+            }
+
+            function updateLightboxContent() {
+                const currentData = imagesList[currentImgIndex];
+                lightboxImg.setAttribute('src', currentData.src);
+                lightboxImg.setAttribute('alt', currentData.alt);
+            }
+
+            function showNextImage() {
+                currentImgIndex = (currentImgIndex + 1) % imagesList.length;
+                updateLightboxContent();
+            }
+
+            function showPrevImage() {
+                currentImgIndex = (currentImgIndex - 1 + imagesList.length) % imagesList.length;
+                updateLightboxContent();
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+            
+            // Click outside the image to close modal
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrap')) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard navigation support
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') showNextImage();
+                    if (e.key === 'ArrowLeft') showPrevImage();
+                }
+            });
+
+            /* ==========================================
+               F. Parent Testimonials Carousel (Auto & Dots)
+               ========================================== */
+            const sliderContainer = document.getElementById('slider-container');
+            const dots = document.querySelectorAll('.slider-dot');
+            let slideIndex = 0;
+            const slideCount = dots.length;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                slideIndex = index;
+                
+                // Keep index in boundaries
+                if (slideIndex >= slideCount) slideIndex = 0;
+                if (slideIndex < 0) slideIndex = slideCount - 1;
+
+                // Move container
+                sliderContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+                // Update active dot indicators
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[slideIndex].classList.add('active');
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    showSlide(slideIndex + 1);
+                }, 5000); // changes slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Click action on navigation dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    stopAutoSlide();
+                    const clickedIndex = parseInt(e.target.getAttribute('data-index'));
+                    showSlide(clickedIndex);
+                    startAutoSlide();
+                });
+            });
+
+            // Pause slider on mouse hover to let parent read
+            const testimonialsSection = document.getElementById('testimonials');
+            testimonialsSection.addEventListener('mouseenter', stopAutoSlide);
+            testimonialsSection.addEventListener('mouseleave', startAutoSlide);
+
+            // Initialize auto play
+            startAutoSlide();
+
+            /* ==========================================
+               G. Admissions Inquiry Form Submission (Simulation)
+               ========================================== */
+            const contactForm = document.getElementById('contact-form');
+            const successBox = document.getElementById('form-success');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Grab form fields for potential validation
+                const name = document.getElementById('parent-name').value;
+                const email = document.getElementById('parent-email').value;
+                const phone = document.getElementById('parent-phone').value;
+                const message = document.getElementById('parent-msg').value;
+
+                // Simulate AJAX API post call
+                setTimeout(() => {
+                    successBox.style.display = 'flex';
+                    contactForm.reset();
+                    
+                    // Auto-hide success message after 5 seconds
+                    setTimeout(() => {
+                        successBox.style.display = 'none';
+                    }, 5000);
+                }, 400);
+            });
+
+            /* ==========================================
+               H. Floating WhatsApp Widget Integration
+               ========================================== */
+            const whatsappTrigger = document.getElementById('whatsapp-trigger');
+            
+            whatsappTrigger.addEventListener('click', () => {
+                const phoneNumber = "919876543210"; // Astra Kidz phone number (with country code, without +)
+                const textMessage = "Hi Astra Kidz! I would like to inquire about admission bookings and preschool programs for my child.";
+                const encodedMessage = encodeURIComponent(textMessage);
+                
+                // Form link: wa.me link works universally on mobile/desktop
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Open in a new secure window tab
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            });
+        });
+    </script>
+</body>
+</html>
