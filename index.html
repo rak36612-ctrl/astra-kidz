@@ -15,35 +15,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        @font-face {
+            font-family: 'Evil Empire';
+            src: url('fonts/Evil Empire.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'OCR A Extended';
+            src: url('fonts/ocraext.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* ==========================================================================
            1. CSS Reset & Variables (Design System)
            ========================================================================== */
         :root {
-            /* Vibrant, child-friendly yet modern HSL pastel palette */
-            --primary: 262, 70%, 63%;       /* Playful Purple (#8c7ae6) */
-            --primary-light: 262, 70%, 95%;
-            --secondary: 355, 100%, 73%;     /* Coral Red/Pink (#ff7675) */
-            --secondary-light: 355, 100%, 96%;
-            --accent-yellow: 40, 100%, 65%;   /* Sunshine Yellow (#f1c40f) */
-            --accent-green: 150, 60%, 45%;    /* Friendly Mint Green (#2ecc71) */
-            --accent-green-dark: 150, 60%, 35%;
-            --accent-blue: 200, 90%, 55%;     /* Sky Blue (#3498db) */
+            /* Brand Hex Colors: Blue #00398A, Red #AB002C, Green #02673D, Gold #D6A139, Dark Brown #402700 */
+            --primary: 215, 100%, 27%;       /* Deep Blue (#00398A) */
+            --primary-light: 215, 40%, 94%;
+            --secondary: 345, 100%, 34%;     /* Crimson Red (#AB002C) */
+            --secondary-light: 345, 40%, 94%;
+            --accent-yellow: 40, 66%, 53%;   /* Warm Gold (#D6A139) */
+            --accent-green: 155, 96%, 21%;    /* Forest Green (#02673D) */
+            --accent-green-dark: 155, 96%, 15%;
+            --accent-blue: 215, 100%, 27%;    /* Deep Blue */
             
             /* Neutrals */
-            --text-dark: 210, 29%, 18%;       /* Slate Dark (#1e272e) */
-            --text-light: 210, 15%, 45%;      /* Muted Gray (#57606f) */
-            --bg-creamy: 40, 60%, 98%;        /* Warm off-white (#fefaf4) */
+            --text-dark: 37, 100%, 13%;       /* Dark Brown (#402700) */
+            --text-light: 37, 20%, 40%;      /* Soft Slate Brown */
+            --bg-creamy: 40, 45%, 97%;        /* Warm off-white/cream */
             --white: 0, 0%, 100%;
             
             /* Typography */
-            --font-headings: 'Fredoka', sans-serif;
-            --font-body: 'Quicksand', sans-serif;
+            --font-headings: 'Evil Empire', Impact, sans-serif;
+            --font-body: 'Calibri', 'Segoe UI', sans-serif;
+            --font-mono: 'OCR A Extended', 'Courier New', monospace;
             
             /* Shadows & Transitions */
-            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 15px 35px rgba(108, 92, 231, 0.12);
-            --shadow-hover: 0 20px 40px rgba(108, 92, 231, 0.2);
+            --shadow-sm: 0 4px 10px rgba(64, 39, 0, 0.05);
+            --shadow-md: 0 10px 25px rgba(64, 39, 0, 0.08);
+            --shadow-lg: 0 15px 35px rgba(0, 57, 138, 0.12);
+            --shadow-hover: 0 20px 40px rgba(0, 57, 138, 0.2);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             --radius-round: 24px;
             --radius-pill: 100px;
@@ -111,8 +128,9 @@
 
         .section-tag {
             display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             padding: 6px 20px;
@@ -280,36 +298,39 @@
             gap: 12px;
         }
 
-        @keyframes logoEntryBlink {
-            0% { opacity: 0; transform: scale(0.5); }
-            20% { opacity: 1; transform: scale(1.1); }
-            40% { opacity: 0; transform: scale(1.1); }
-            60% { opacity: 1; transform: scale(1.1); }
-            80% { opacity: 0; transform: scale(1.1); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
         .logo-img {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid hsl(var(--accent-yellow));
             box-shadow: var(--shadow-sm);
-            animation: logoEntryBlink 2.5s ease-out forwards;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
         }
 
         .logo-text {
             font-family: var(--font-headings);
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.5rem;
             color: hsl(var(--primary));
+            text-transform: uppercase;
+            font-weight: normal;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
         }
 
-        .logo-text span {
+        .logo-subtext {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
             color: hsl(var(--secondary));
+            font-weight: bold;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
         }
 
         .nav-menu {
@@ -401,8 +422,9 @@
             display: inline-block;
             background-color: hsl(var(--accent-yellow));
             color: hsl(var(--text-dark));
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-family: var(--font-mono);
+            font-weight: bold;
+            font-size: 0.85rem;
             padding: 6px 20px;
             border-radius: var(--radius-pill);
             margin-bottom: 20px;
@@ -1306,19 +1328,29 @@
             z-index: 2;
         }
 
-        .footer-logo-wrap {
+        .footer-logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
         .footer-logo-text {
             font-family: var(--font-headings);
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.7rem;
             color: hsl(var(--white));
+            text-transform: uppercase;
+            font-weight: normal;
+            letter-spacing: 0.5px;
         }
 
-        .footer-logo-text span {
+        .footer-logo-subtext {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
             color: hsl(var(--accent-yellow));
+            font-weight: bold;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
         }
 
         .footer-desc {
@@ -1670,9 +1702,116 @@
                 font-size: 1.8rem;
             }
         }
+
+        /* ==========================================================================
+           Entry Splash Screen Loader
+           ========================================================================== */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(var(--bg-creamy));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s;
+        }
+
+        #splash-screen.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .splash-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .splash-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid hsl(var(--accent-yellow));
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: scale(0.6);
+            animation: splashLogoIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .splash-title-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .splash-title {
+            font-family: var(--font-headings);
+            font-size: 2.8rem;
+            color: hsl(var(--primary));
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: normal;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: splashTextIn 0.8s ease-out 0.6s forwards;
+        }
+
+        .splash-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: hsl(var(--secondary));
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(15px);
+            animation: splashTextIn 0.8s ease-out 0.9s forwards;
+        }
+
+        @keyframes splashLogoIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes splashTextIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Prevent scroll during loader */
+        body.loading {
+            overflow: hidden !important;
+            height: 100vh;
+        }
     </style>
 </head>
-<body>
+<body class="loading">
+
+    <!-- ==========================================================================
+       Entry Splash Screen Preloader
+       ========================================================================== -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="logo1.jpeg" alt="Astra Kidz Logo" class="splash-logo">
+            <div class="splash-title-wrap">
+                <h1 class="splash-title">Astra Kidz</h1>
+                <h2 class="splash-subtitle">Preschool</h2>
+            </div>
+        </div>
+    </div>
 
     <!-- ==========================================================================
        1. Header & Navigation Menu
@@ -1681,7 +1820,10 @@
         <div class="header-container">
             <a href="#home" class="logo-wrap">
                 <img src="logo1.jpeg" alt="Astra Kidz Logo" class="logo-img">
-                <span class="logo-text">Astra<span>Kidz</span></span>
+                <div class="logo-text-group">
+                    <span class="logo-text">Astra Kidz</span>
+                    <span class="logo-subtext">Preschool</span>
+                </div>
             </a>
             
             <nav>
@@ -2151,7 +2293,10 @@
                 <!-- Branding and social media links -->
                 <div>
                     <div class="footer-logo-wrap">
-                        <span class="footer-logo-text">Astra<span>Kidz</span></span>
+                        <div class="footer-logo-text-group">
+                            <span class="footer-logo-text">Astra Kidz</span>
+                            <span class="footer-logo-subtext">Preschool</span>
+                        </div>
                     </div>
                     <p class="footer-desc">Nurturing young minds through play, creativity, and exploration since 2018. Creating secondary homes for your children.</p>
                     <div class="footer-socials">
@@ -2196,7 +2341,6 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2026 Astra Kidz Preschool. All Rights Reserved.</p>
-                <p>Designed with <span class="love-span">❤</span> for young learners.</p>
             </div>
         </div>
     </footer>
@@ -2237,6 +2381,21 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
+            // Entry animation / Splash Screen fadeout
+            const splash = document.getElementById('splash-screen');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    splash.classList.add('fade-out');
+                    document.body.classList.remove('loading');
+                }, 1800);
+            });
+            // Fallback safety timeout
+            setTimeout(() => {
+                if (splash && !splash.classList.contains('fade-out')) {
+                    splash.classList.add('fade-out');
+                    document.body.classList.remove('loading');
+                }
+            }, 4000);
             /* ==========================================
                A. Mobile Navigation Menu Toggle
                ========================================== */
